@@ -1,28 +1,38 @@
+body {
+    background-color: rgb(56, 55, 55);
+}
+
 .image-slider {
     position: relative;
     display: inline-block;
+    line-height: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .image-slider > div {
     position: absolute;
     top: 0; bottom: 0; left: 0;
     width: 50%;
+    max-width: 100%;
     overflow: hidden;
     resize: horizontal;
 }
 
-.image-slider > div::before {
+.image-slider > div:before {
     content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
     position: absolute;
     bottom: 0; right: 0;
-    width: 12px; height: 12px;
     padding: 5px;
     background: linear-gradient(-45deg, white 50%, transparent 0);
     background-clip: content-box;
-    cursor: ew-resize;
+    resize: horizontal;
+    overflow: hidden;
 }
 
-image-slider img {
-    display: block;
+.image-slider img {
     user-select: none;
 }
